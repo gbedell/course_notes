@@ -1,0 +1,84 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- All lessons in this container -->
+<div class = "lessons">
+
+{% for concept in concepts %}
+	
+	<div class = "lesson">
+
+		<!-- Prints the title for each lesson -->
+		<h2 class = "title">
+				{{ concept.lesson_title }}
+		</h2>
+
+
+	{% for topic in concept.lessons %}
+
+		<div class = "topic">
+
+			<!-- Prints the topic name for each topic -->
+			<h3 class = "topic-name">
+			{{ topic.title }}
+			</h3>
+			
+			<!-- Prints the notes for each topic -->
+			<p>
+			{{ topic.notes }}
+			</p>
+
+		</div>
+	
+	{% endfor %}
+
+	</div>
+
+{% endfor %} 
+
+	<!-- Comments Section -->
+	<div class="comments-section">
+		<div class="comments-input-box">
+			<span class="bold">Leave a Comment:</span>
+			<br>
+			<br>
+			<form method="post">
+				Email:
+				<br>
+				<input type="text" name="email" style="width: 300px">
+				<br>
+				Comment:
+				<br>
+				<textarea name="comment" rows="4" cols="80"></textarea>
+				<br>
+				<input type="submit" value="Post Comment">
+			</form>
+
+			<!-- Prints error only if there is some error in the user's form input -->
+			{% if error: %}
+				<p class="error">Please submit both a Valid Email and a Comment</p>
+			{% endif %}
+
+		</div>
+
+		<!-- Comments section where comments are displayed -->
+		<div class="comments-output-box">
+			Comments:
+			<br>
+			{% for submission in query %}
+				<div class="submission">
+					<span class="bold">{{ submission.user_email }}</span> wrote on {{submission.date}}:
+					<br>
+					{{ submission.comment_text }}
+				</div>
+
+			{% endfor %}
+		</div>	
+	</div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="lessons">
+	<div class="lesson">
+		<h2 class="title">Course 5 Notes - JavaScript</h2>
+
+		<div class="topic">
+			<h3 class="topic-name">Overview</h3>
+
+			<p>
+				JavaScript is a powerful object-oriented programming language that works in 
+				conjuction with HTML and CSS. It allows web pages to become more responsive 
+				and functional for users and developers.
+			</p>
+			<br>
+			<p> 
+				You can add JavaScript to your web page in two main ways. First,
+				you can create a .js file with your JavaScript, and link to that script
+				in the head of the HTML file. The other method is to include JavaScript
+				inline in the body of your HTML. Both options work, but having a separate
+				.js file is normally preferred because it separates HTML and code, making
+				it much easier to read.
+			</p>
+
+		<h3 class="topic-name">jQuery</h3>
+			
+			<p>
+				One of the more popular JavaScript libraries is <a href="http://jquery.com/" target="_blank">
+				jQuery</a>. The purpose of jQuery is to make it easier to use JavaScript on your
+				webpage. The slogan "write les, do more" is appropriate because jQuery allows you to
+				use pre-written code to simplify the code that you actually have to write. Big companies
+				such as Google, Microsoft, IBM, and Netflix all use jQuery in some capacity.
+			</p>
+		
+		<h3 class="topic-name">caniuse.com</h3>
+
+			<p>
+				A cool tool I found online is <a href="http://caniuse.com/#tables" target="_blank">caniuse.com</a>, which
+				a way to find out browser compatability for different HTML, CSS, and JS elements and functions.
+				As I've learned throughout this Nanodegree, browser-compatability is of utmost importance in 
+				making sure your webpage renders and responds correctly - so this tool will definitely be
+				helpful in ensuring that.
+			</p>
+		
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
